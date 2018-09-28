@@ -84,7 +84,6 @@ def main():
             df.columns = df.iloc[0]                  # Fix the above mentioned issue
             df = df.reindex(df.index.drop(0))        # Fix the above mentioned issue
         df = df.dropna(axis=1, how='all')        # Drop any empty columns
-        df.to_csv(f"../Data/{year[1]}.csv", index=False) # Save the file as an invididual year
         agg_list.append(df)
 
     df = pd.concat(agg_list, sort=True)
